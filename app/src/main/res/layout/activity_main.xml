@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/main_activity_bg"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="10sp">
+
+        <ImageView
+            android:id="@+id/imgHistory"
+            android:layout_width="37sp"
+            android:layout_height="37sp"
+            android:src="@drawable/ic_history" />
+
+        <EditText
+            android:padding="10sp"
+            android:id="@+id/edtSearch"
+            android:hint="Search or Type a Url Here"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:background="@drawable/searchbg"
+            android:imeOptions="actionGo"
+            android:inputType="textUri"
+            android:layout_weight="2"
+            android:layout_marginLeft="7sp"
+            android:layout_marginRight="7sp"/>
+
+        <ImageView
+            android:id="@+id/imgInfo"
+            android:layout_width="37sp"
+            android:layout_height="37sp"
+            android:src="@drawable/ic_info" />
+
+    </LinearLayout>
+
+    <!--Progress Bar Here-->
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="6sp"
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:visibility="invisible"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#B6B0B0"
+        android:id="@+id/div"/>
+
+<!--    View Before Loading any Web Address-->
+    <LinearLayout
+        android:id="@+id/demoInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/demoImage"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:src="@drawable/logo"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Internet"
+            android:layout_gravity="center"
+            android:layout_marginTop="20sp"
+            android:gravity="center"
+            android:textSize="40sp"/>
+
+    </LinearLayout>
+
+
+<!--    Web View Here-->
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/Swiperef"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    Webview-->
+
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/webPage"
+            android:visibility="gone"/>
+
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>
